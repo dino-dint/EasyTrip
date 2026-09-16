@@ -153,9 +153,12 @@ function Navbar() {
                 <Heart size={18} />
               </Link>
 
-              <button className={iconButtonClass}>
+              <Link
+               to="/login"
+               className={iconButtonClass}>
                 <User size={18} />
-              </button>
+                
+              </Link>
 
               <Link
                 to="/trip"
@@ -171,9 +174,11 @@ function Navbar() {
                 <Map size={18} />
               </Link>
 
-              <button className={iconButtonClass}>
+              <Link 
+              to="/login"
+              className={iconButtonClass}>
                 <User size={18} />
-              </button>
+              </Link>
 
               <button
                 onClick={() => setIsOpen(true)}
