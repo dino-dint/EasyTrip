@@ -1,10 +1,13 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import MainLayout from '../components/layouts/MainLayout'
+import { Routes, Route } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+// import MainLayout from '../components/layouts/MainLayout'
 import Login from '../pages/Auth/Login'
 import Register from '../pages/Auth/Register'
 import ForgotPassword from '../pages/Auth/ForgotPassword'
-import ComingSoon from '../pages/ComingSoon/ComingSoon'
-import Home from '../pages/Home/Home'
+// import ComingSoon from '../pages/ComingSoon/ComingSoon'
+// import Home from '../pages/Home/Home'
 
 function AppRoutes() {
   return (
@@ -16,6 +19,10 @@ function AppRoutes() {
         <Route path='/flight' element={<ComingSoon title="Flights"/>}/>
         <Route path='/contact' element={<ComingSoon title="Contact"/>}/>
       </Route>
+      {/* <Route element={<MainLayout/>}>
+        <Route path='/home' element={<Home/>} />
+      </Route> */}
+      <Route path='/' element={<Navigate to="/login" replace />} />
 
 
       <Route path='/login' element={<Login/>}/>
@@ -30,5 +37,6 @@ function AppRoutes() {
     </Routes>
   )
 }
-
 export default AppRoutes
+
+
