@@ -1,8 +1,12 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Mail, Lock, Eye, EyeOff, Plane } from 'lucide-react'
+import { useAuth } from '../../components/hooks/useAuth';
 
 function Login() {
+  const navigate = useNavigate();
+  const {login} = useAuth();
+
   const [formData, setFormData] = useState({ email: '', password: '' })
   const [showPassword, setShowPassword] = useState(false)
   const [errors, setErrors] = useState({})
@@ -12,6 +16,7 @@ function Login() {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }))
+    if (error.general) setErrors((prev) => ({...prev, general: ''}))
   }
 
   const validate = () => {
@@ -31,15 +36,16 @@ function Login() {
       return
     }
     setLoading(true)
-    try {
-      // TODO: integrate with backend auth API
-      console.log('Login:', formData)
-    } catch {
-      setErrors({ general: 'Login failed. Please try again.' })
-    } finally {
-      setLoading(false)
+    const res = await login(formData)
+    setLoading(false)
+
+    if(res.success) {
+      navigate('/')
+    } else {
+      setErrors({general: res.message})
     }
   }
+
 
   return (
     <div
@@ -48,8 +54,8 @@ function Login() {
 
       <div className="absolute inset-0 bg-[#0b1220]/60" />
       <div className="relative z-10 w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sky-500 to-blue-700 rounded-2xl mb-4 shadow-lg shadow-sky-950/40">
+        <div className="text-center mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-sky-500 to-blue-700 rounded-2xl mb-4 shadow-lg shadow-sky-950/40">
             <Plane className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-white">Welcome Back</h1>
@@ -65,9 +71,9 @@ function Login() {
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-sky-100/80 mb-1.5">Email</label>
+              <label className="block text-sm font-medium text-sky-100/80 px-1 mb-1.5">Email</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-sky-300/70" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-sky-300" />
                 <input
                   type="email"
                   name="email"
@@ -83,9 +89,9 @@ function Login() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-sky-100/80 mb-1.5">Password</label>
+              <label className="block text-sm font-medium px-1 text-sky-100/80 mb-1.5">Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-sky-300/70" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-sky-300" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   name="password"
@@ -99,9 +105,9 @@ function Login() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-sky-200/70 hover:text-sky-100"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-sky-200/50 hover:text-sky-100"
                 >
-                  {showPassword ? <Eye className="w-5 h-5" /> : <EyeOff className="w-5 h-5" />}
+                  {showPassword ? <Eye className="w-5 h-5 text-sky-200/70" /> : <EyeOff className="w-5 h-5 text-sky-200/70" />}
                 </button>
               </div>
               {errors.password && <p className="mt-1 text-sm text-red-300">{errors.password}</p>}
@@ -120,18 +126,18 @@ function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-xl transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-sky-950/50"
+              className="w-full py-3 bg-linear-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-xl transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-sky-950/50"
             >
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
 
-          <div className="mt-6 relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/20" />
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="bg-transparent px-4 text-sky-100/50">or continue with</span>
+          
+
+          <div className='mt-6 relative'>
+            <div className='w-full border-t border-2 border-white/20'></div>
+            <div className='flex justify-center text-md pt-2'>
+              <span className='bg-transparent px-4 text-sky-100/50'>or continue with</span>
             </div>
           </div>
 
@@ -155,7 +161,7 @@ function Login() {
         </div>
 
         <p className="text-center mt-6 text-sm text-sky-100/70">
-          Don&apos;t have an account?{' '}
+          Don't have an account?{' '}
           <Link to="/register" className="text-sky-300 hover:text-sky-200 font-semibold">
             Sign up
           </Link>
