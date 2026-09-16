@@ -1,3 +1,5 @@
+import { Routes, Route, Navigate } from 'react-router-dom'
+import MainLayout from '../components/layouts/MainLayout'
 import { Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 // import MainLayout from '../components/layouts/MainLayout'
@@ -10,6 +12,13 @@ import ForgotPassword from '../pages/Auth/ForgotPassword'
 function AppRoutes() {
   return (
     <Routes>
+      <Route element={<MainLayout/>}>
+        <Route path='/' element={<Home/>} />
+        <Route path='/destination' element={<ComingSoon title="Destination"/>}/>
+        <Route path='/accommodation' element={<ComingSoon title="Hotels & Resorts"/>}/>
+        <Route path='/flight' element={<ComingSoon title="Flights"/>}/>
+        <Route path='/contact' element={<ComingSoon title="Contact"/>}/>
+      </Route>
       {/* <Route element={<MainLayout/>}>
         <Route path='/home' element={<Home/>} />
       </Route> */}
