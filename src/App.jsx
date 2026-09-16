@@ -1,19 +1,19 @@
 import React from 'react'
 import AppRoutes from './routes/AppRoutes'
-import { AuthProvider } from './context/AuthContext'
-import { BookingProvider } from './context/BookingContext'
-import { WishProvider } from './context/WIshlistContext'
+// import { AuthProvider } from './context/AuthContext'
+// import { BookingProvider } from './context/BookingContext'
+// import { WishProvider } from './context/WIshlistContext'
 
 
 function App() {
   return (
-    <AuthProvider>
-      <BookingProvider>
-        <WishProvider>
+    // <AuthProvider>
+    //   <BookingProvider>
+    //     <WishProvider>
           <AppRoutes/>
-        </WishProvider>
-      </BookingProvider>
-    </AuthProvider>
+    //     </WishProvider>
+    //   </BookingProvider>
+    // </AuthProvider>
   )
 }
 
