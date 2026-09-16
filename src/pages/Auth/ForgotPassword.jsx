@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, ArrowLeft, Plane, CheckCircle } from 'lucide-react'
+import { useAuth } from '../../components/hooks/useAuth'
 
 function ForgotPassword() {
+  const { forgotPassword } = useAuth()
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -18,15 +20,16 @@ function ForgotPassword() {
       setError('Email is invalid')
       return
     }
+
     setLoading(true)
-    try {
-      // TODO: integrate with backend auth API
-      console.log('Forgot password:', email)
+    setError('')
+    const res = await forgotPassword(email)
+    setLoading(false)
+
+    if (res.success) {
       setSent(true)
-    } catch {
-      setError('Failed to send reset email. Please try again.')
-    } finally {
-      setLoading(false)
+    } else {
+      setError(res.message)
     }
   }
 
@@ -51,17 +54,19 @@ function ForgotPassword() {
           </p>
           <button
             onClick={() => { setSent(false); setEmail('') }}
-            className="w-full py-3 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-xl transition shadow-lg shadow-sky-950/50"
+            className="w-full py-3 bg-linear-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-xl transition shadow-lg shadow-sky-950/50"
           >
             Resend Email
           </button>
-          <Link
-            to="/login"
-            className="mt-4 inline-flex items-center justify-center gap-2 text-sm text-sky-200 hover:text-sky-100 font-medium"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Sign In
-          </Link>
+          <div className="mt-4">
+            <Link
+              to="/login"
+              className="inline-flex items-center justify-center gap-2 text-sm text-sky-200 hover:text-sky-100 font-medium"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Sign In
+            </Link>
+          </div>
         </div>
       </div>
     )
@@ -75,7 +80,7 @@ function ForgotPassword() {
       <div className="absolute inset-0 bg-[#0b1220]/60" />
       <div className="relative z-10 w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sky-500 to-blue-700 rounded-2xl mb-4 shadow-lg shadow-sky-950/40">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-sky-500 to-blue-700 rounded-2xl mb-4 shadow-lg shadow-sky-950/40">
             <Mail className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-white">Forgot Password?</h1>
@@ -106,13 +111,12 @@ function ForgotPassword() {
                   }`}
                 />
               </div>
-              {error && <p className="mt-1 text-sm text-red-300">{error}</p>}
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-xl transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-sky-950/50"
+              className="w-full py-3 bg-linear-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-xl transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-sky-950/50"
             >
               {loading ? 'Sending...' : 'Send Reset Link'}
             </button>
