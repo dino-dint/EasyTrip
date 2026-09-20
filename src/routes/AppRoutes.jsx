@@ -5,6 +5,10 @@ import Register from '../pages/Auth/Register'
 import ForgotPassword from '../pages/Auth/ForgotPassword'
 import ComingSoon from '../pages/ComingSoon/ComingSoon'
 import Home from '../pages/Home/Home'
+import Hotels from '../pages/Hotels/Hotels'
+import HotelDetails from '../pages/Hotels/HotelDetails'
+import Flights from '../pages/Flights/Flight'
+import FlightDetails from '../pages/Flights/FlightDetails'
 
 
 function AppRoutes() {
@@ -13,8 +17,10 @@ function AppRoutes() {
       <Route element={<MainLayout/>}>
         <Route path='/' element={<Home/>} />
         <Route path='/destination' element={<ComingSoon title="Destination"/>}/>
-        <Route path='/accommodation' element={<ComingSoon title="Hotels & Resorts"/>}/>
-        <Route path='/flight' element={<ComingSoon title="Flights"/>}/>
+        <Route path='/accommodation' element={<Hotels/>}/>
+        <Route path='/accommodation/:id' element={<HotelDetails/>}/>
+        <Route path='/flight' element={<Flights/>}/>
+        <Route path='/flight/:id' element={<FlightDetails/>}/>
         <Route path='/contact' element={<ComingSoon title="Contact"/>}/>
       </Route>
       
