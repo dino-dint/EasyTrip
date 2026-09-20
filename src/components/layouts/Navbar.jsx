@@ -48,22 +48,22 @@ function Navbar() {
 
   const navLinkClass = ({ isActive }) =>
     `relative px-1 py-2 text-sm font-medium tracking-wide transition-all duration-300 ${
-      isActive ? "text-white" : "text-white/80 hover:text-white"
+      isActive ? "text-white" : "text-slate-300 hover:text-white"
     }`;
 
   const underlineClass = (isActive) =>
-    `absolute left-0 -bottom-1 h-[2px] w-full rounded-full bg-white origin-left transition-transform duration-300 ${
+    `absolute left-0 -bottom-1 h-[2px] w-full rounded-full bg-sky-400 origin-left transition-transform duration-300 ${
       isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
     }`;
 
   const iconButtonClass =
-    "relative flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white hover:text-sky-600 hover:border-white hover:shadow-lg hover:shadow-sky-400/30 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
+    "relative flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-200 border border-slate-700 transition-all duration-300 hover:bg-sky-500 hover:text-white hover:border-sky-500 hover:shadow-lg hover:shadow-sky-500/30 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900";
 
   return (
     <>
       {/* Floating Header Bar */}
       <header className="fixed inset-x-0 top-3 sm:top-5 z-40 flex justify-center px-3 sm:px-5 lg:px-8">
-        <div className="w-full max-w-7xl rounded-full border border-white/20 bg-white/10 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.25)]">
+        <div className="w-full max-w-7xl rounded-full border border-slate-700/80 bg-slate-900/90 backdrop-blur-3xl   shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
           <div className="flex h-16 sm:h-20 items-center justify-between px-4 sm:px-6 lg:px-10">
             {/* Logo */}
             <Link
@@ -71,7 +71,7 @@ function Navbar() {
               onClick={closeDropdown}
               className="flex items-center gap-2 shrink-0"
             >
-              <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-wide text-white transition hover:text-sky-300">
+              <span className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-wide text-white transition hover:text-sky-400">
                 EasyTrip
               </span>
             </Link>
@@ -99,7 +99,7 @@ function Navbar() {
                         <button
                           type="button"
                           onClick={() => setDestinationOpen(!destinationOpen)}
-                          className="text-white/80 hover:text-white transition"
+                          className="text-slate-300 hover:text-white transition"
                         >
                           <ChevronDown
                             size={18}
@@ -112,13 +112,13 @@ function Navbar() {
 
                       {/* Dropdown */}
                       {destinationOpen && (
-                        <div className="absolute left-0 top-full mt-3 w-52 rounded-2xl border border-white/10 bg-slate-900/90 backdrop-blur-xl p-2 shadow-2xl z-50">
+                        <div className="absolute left-0 top-full mt-3 w-52 rounded-2xl border border-slate-700 bg-slate-900/95 backdrop-blur-xl p-2 shadow-2xl z-50">
                           {destinationDropdown.map((subItem) => (
                             <Link
                               key={subItem.name}
                               to={subItem.path}
                               onClick={closeDropdown}
-                              className="block rounded-xl px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
+                              className="block rounded-xl px-4 py-2 text-sm text-slate-300 transition hover:bg-slate-800 hover:text-white"
                             >
                               {subItem.name}
                             </Link>
@@ -153,11 +153,8 @@ function Navbar() {
                 <Heart size={18} />
               </Link>
 
-              <Link
-               to="/login"
-               className={iconButtonClass}>
+              <Link to="/login" className={iconButtonClass}>
                 <User size={18} />
-                
               </Link>
 
               <Link
@@ -174,9 +171,7 @@ function Navbar() {
                 <Map size={18} />
               </Link>
 
-              <Link 
-              to="/login"
-              className={iconButtonClass}>
+              <Link to="/login" className={iconButtonClass}>
                 <User size={18} />
               </Link>
 
@@ -192,7 +187,7 @@ function Navbar() {
             {/* Mobile Toggle Button */}
             <button
               onClick={() => setIsOpen(true)}
-              className="flex sm:hidden h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md hover:bg-white/20 transition"
+              className="flex sm:hidden h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-slate-200 backdrop-blur-md hover:bg-slate-700 transition"
               aria-label="Open sidebar menu"
             >
               <Menu size={20} />
@@ -213,19 +208,19 @@ function Navbar() {
 
       {/* Off-canvas Mobile/Tablet Sidebar Drawer */}
       <aside
-        className={`fixed top-0 right-0 z-50 h-full w-[80%] max-w-sm border-white/20 bg-white/10 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-in-out flex flex-col justify-between p-6 lg:hidden ${
+        className={`fixed top-0 right-0 z-50 h-full w-[80%] max-w-sm border-l border-slate-700 bg-slate-900/95 backdrop-blur-2xl shadow-2xl transition-transform duration-300 ease-in-out flex flex-col justify-between p-6 lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div>
           {/* Drawer Top Header */}
-          <div className="flex items-center justify-between pb-6 border-b border-white/10">
+          <div className="flex items-center justify-between pb-6 border-b border-slate-800">
             <span className="text-xl font-bold tracking-wide text-white">
               EasyTrip
             </span>
             <button
               onClick={closeSidebar}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-200 hover:bg-slate-700 transition"
               aria-label="Close menu"
             >
               <X size={20} />
@@ -240,7 +235,7 @@ function Navbar() {
                   <>
                     <button
                       onClick={() => setDestinationOpen(!destinationOpen)}
-                      className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-white hover:bg-white/10 transition"
+                      className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-slate-200 hover:bg-slate-800 transition"
                     >
                       <span>{item.name}</span>
                       <ChevronDown
@@ -259,7 +254,7 @@ function Navbar() {
                             key={subItem.name}
                             to={subItem.path}
                             onClick={closeSidebar}
-                            className="block rounded-lg px-3 py-2 text-sm text-white/70 hover:bg-white/10 hover:text-white transition"
+                            className="block rounded-lg px-3 py-2 text-sm text-slate-400 hover:bg-slate-800 hover:text-white transition"
                           >
                             {subItem.name}
                           </Link>
@@ -275,7 +270,7 @@ function Navbar() {
                       `block rounded-xl px-4 py-3 text-base font-medium transition ${
                         isActive
                           ? "bg-sky-500/20 text-sky-400 font-semibold"
-                          : "text-white/80 hover:bg-white/10 hover:text-white"
+                          : "text-slate-300 hover:bg-slate-800 hover:text-white"
                       }`
                     }
                   >
@@ -288,7 +283,7 @@ function Navbar() {
         </div>
 
         {/* Sidebar Drawer Footer */}
-        <div className="border-t border-white/10 pt-6 space-y-4">
+        <div className="border-t border-slate-800 pt-6 space-y-4">
           <div className="flex items-center justify-around gap-3">
             <Link
               to="/favorite"
@@ -298,9 +293,9 @@ function Navbar() {
               <Heart size={18} />
             </Link>
 
-            <button className={iconButtonClass}>
+            <Link to="/login" onClick={closeSidebar} className={iconButtonClass}>
               <User size={18} />
-            </button>
+            </Link>
 
             <Link
               to="/trip"
