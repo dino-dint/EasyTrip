@@ -149,7 +149,7 @@ function Navbar() {
 
             {/* Desktop Right Side */}
             <div className="hidden lg:flex items-center gap-3 shrink-0">
-              <Link to="/favorite" className={iconButtonClass}>
+              <Link to="/wishlist" className={iconButtonClass}>
                 <Heart size={18} />
               </Link>
 
@@ -158,7 +158,7 @@ function Navbar() {
               </Link>
 
               <Link
-                to="/trip"
+                to="/my-trip"
                 className="rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-400 shadow-lg hover:shadow-sky-500/30"
               >
                 My Trip
@@ -286,7 +286,7 @@ function Navbar() {
         <div className="border-t border-slate-800 pt-6 space-y-4">
           <div className="flex items-center justify-around gap-3">
             <Link
-              to="/favorite"
+              to="/wishlist"
               onClick={closeSidebar}
               className={iconButtonClass}
             >
@@ -307,7 +307,7 @@ function Navbar() {
           </div>
 
           <Link
-            to="/trip"
+            to="/my-trip"
             onClick={closeSidebar}
             className="block w-full text-center rounded-full bg-sky-500 py-3 text-sm font-semibold text-white transition hover:bg-sky-400 shadow-lg shadow-sky-500/20"
           >
