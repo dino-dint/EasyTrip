@@ -9,6 +9,7 @@ function HotelCard({ hotel }) {
       className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1  hover:shadow-[0_20px_50px_rgba(56,189,248,0.25)]"
     >
       <div className="relative h-52 shrink-0 overflow-hidden">
+        
         <img
           src={hotel.image}
           alt={hotel.name}

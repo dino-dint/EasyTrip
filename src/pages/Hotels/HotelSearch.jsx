@@ -5,12 +5,13 @@ function HotelSearch({ onSearch }) {
   const [value, setValue] = useState("");
   const [place, setPlace] = useState("Anywhere");
   const [guests, setGuests] = useState("2 guests");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (typeof onSearch === "function") onSearch(value.trim());
   };
-  
+
 
   return (
     <form

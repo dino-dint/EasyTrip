@@ -136,6 +136,7 @@ function HotelRow({ title, subtitle, icon: Icon, hotels }) {
     if (el) el.scrollBy({ left: dir * (el.clientWidth - 140), behavior: "smooth" });
   };
 
+  
   return (
     <section>
       <div className="flex items-end justify-between gap-4">
