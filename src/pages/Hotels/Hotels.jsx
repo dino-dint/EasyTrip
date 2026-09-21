@@ -31,6 +31,7 @@ const sections = [
   },
 ];
 
+
 function Hotels() {
   const [query, setQuery] = useState("");
 
@@ -78,9 +79,6 @@ function Hotels() {
 
       {/* Body */}
       <main className="relative mx-auto w-full max-w-[90rem] overflow-x-clip px-4 py-14 sm:px-6 lg:px-8">
-        <div className="pointer-events-none absolute -left-32 top-40 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
-        <div className="pointer-events-none absolute -right-32 top-[900px] h-80 w-80 rounded-full bg-blue-400/20 blur-3xl" />
-
         {query ? (
           <section className="relative">
             <div className="flex items-end justify-between gap-4">

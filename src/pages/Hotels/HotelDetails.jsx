@@ -518,6 +518,7 @@ function PaymentModal({ hotel, room, nights, subtotal, onClose }) {
               className="mt-6 w-full rounded-full bg-sky-500 py-3.5 font-semibold text-white transition hover:bg-sky-400"
             >
               Done
+              
             </button>
           </div>
         ) : (

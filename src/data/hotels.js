@@ -797,6 +797,7 @@ export const HOTELS = [
     img("photo-1545569341-9eb8b30979d9"),
     img("photo-1560448204-e02f11c3d0e2"),
   ],
+  
   summary:
     "A stylishly restored 1920s shikumen lane house in the French Concession. Mao Maison offers art-filled rooms, a sunny courtyard, and a rooftop bar where travellers trade stories over views of Shanghai's tree-lined lanes.",
   amenities: [

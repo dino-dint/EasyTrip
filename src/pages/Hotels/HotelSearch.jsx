@@ -10,6 +10,7 @@ function HotelSearch({ onSearch }) {
     e.preventDefault();
     if (typeof onSearch === "function") onSearch(value.trim());
   };
+  
 
   return (
     <form
