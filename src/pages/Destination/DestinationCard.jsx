@@ -7,7 +7,7 @@ export default function DestinationCard({ destination }) {
   return (
     <div
       onClick={() => navigate(`/destination/${destination.slug}`)}
-      className="group cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-slate-900 transition duration-500 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/20"
+      className="group cursor-pointer overflow-hidden rounded-3xl border-2 border-black/20 bg-slate-100 transition duration-500 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/20"
     >
       <div className="relative h-64 overflow-hidden">
         <img
@@ -22,7 +22,7 @@ export default function DestinationCard({ destination }) {
         </span>
       </div>
 
-      <div className="space-y-4 p-5 text-white">
+      <div className="space-y-4 p-5 text-black">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-xl font-bold">{destination.title}</h3>

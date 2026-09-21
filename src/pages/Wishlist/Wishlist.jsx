@@ -5,7 +5,7 @@ import { wishlistData } from "../../data/wishlist";
 
 const Wishlist = () => {
   return (
-    <main className="min-h-screen bg-[#071225] text-white">
+    <main className="min-h-screen bg-white text-black">
       {/* Background glow */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />

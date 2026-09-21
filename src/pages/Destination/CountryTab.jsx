@@ -8,7 +8,7 @@ export default function CountryTabs({ countries, selected, setSelected }) {
           className={`whitespace-nowrap rounded-full px-5 py-2 text-sm transition-all ${
             selected === country
               ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/30"
-              : "bg-slate-900 text-slate-300 hover:bg-slate-800"
+              : "bg-slate-100 text-black hover:bg-cyan-500"
           }`}
         >
           {country}

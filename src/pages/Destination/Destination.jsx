@@ -28,7 +28,7 @@ export default function Destination() {
   const featured = destinations.filter((item) => item.featured);
 
   return (
-    <main className="bg-[#020617] text-white">
+    <main className="bg-slate-100 text-black">
       <DestinationHero search={search} setSearch={setSearch} />
 
       <section className="mx-auto max-w-7xl px-5 py-16 space-y-8">
@@ -56,7 +56,7 @@ export default function Destination() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-20">
+      <section className="bg-slate-100 py-20">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mb-10 flex items-center gap-3">
             <Sparkles className="text-cyan-400" />
