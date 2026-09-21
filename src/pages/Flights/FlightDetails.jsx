@@ -171,8 +171,6 @@ function FlightDetailsInner({ flight }) {
 
       {/* Body */}
       <main className="relative mx-auto max-w-7xl overflow-x-clip px-4 py-12 sm:px-6 lg:px-8">
-        <div className="pointer-events-none absolute -left-20 top-20 h-64 w-64 rounded-full bg-sky-400/20 blur-3xl" />
-
         <div className="grid gap-10 lg:grid-cols-[1.55fr_1fr] lg:items-start">
           {/* Left column */}
           <div className="space-y-12">
