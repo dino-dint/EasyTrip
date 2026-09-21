@@ -24,6 +24,7 @@ export const fmtFullDay = (d) =>
     day: "numeric",
     year: "numeric",
   })
+  
 
 export const today = new Date()
 

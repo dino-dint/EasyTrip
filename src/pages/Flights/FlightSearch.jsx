@@ -131,15 +131,16 @@ function FlightSearch({
           </select>
         </label>
 
-        <button
+        {/* <button
           type="submit"
           className="rounded-full bg-sky-500 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition-all duration-300 hover:bg-sky-400 hover:shadow-sky-400/40"
         >
           <span className="inline-flex items-center gap-2">
             <Search size={16} />
             Search Flights
+            
           </span>
-        </button>
+        </button> */}
 
         <p className="flex items-center gap-2 px-2 text-xs text-slate-400 sm:ml-auto">
           <CalendarDays size={14} className="shrink-0 text-sky-500" />

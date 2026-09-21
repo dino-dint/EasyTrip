@@ -73,6 +73,7 @@ function FlightDetails() {
         </Link>
       </div>
     );
+    
   }
 
   return <FlightDetailsInner key={flight.id} flight={flight} />;
