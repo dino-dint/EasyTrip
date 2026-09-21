@@ -31,13 +31,10 @@ export const AIRPORTS = [
   { code: "PNH", city: "Phnom Penh", country: "Cambodia" },
   { code: "REP", city: "Siem Reap", country: "Cambodia" },
   { code: "KOS", city: "Sihanoukville", country: "Cambodia" },
-  { code: "BKK", city: "Bangkok", country: "Thailand" },
-  { code: "CNX", city: "Chiang Mai", country: "Thailand" },
-  { code: "KBV", city: "Krabi", country: "Thailand" },
-  { code: "SIN", city: "Singapore", country: "Singapore" },
-  { code: "KUL", city: "Kuala Lumpur", country: "Malaysia" },
+  { code: "KOS", city: "Koh Kong", country: "Cambodia" },
   { code: "HND", city: "Tokyo", country: "Japan" },
   { code: "KIX", city: "Osaka", country: "Japan" },
+  { code: "ICN", city: "Seoul", country: "South Korea" },
   { code: "ICN", city: "Seoul", country: "South Korea" },
   { code: "CAN", city: "Guangzhou", country: "China" },
   { code: "PVG", city: "Shanghai", country: "China" },
@@ -47,11 +44,6 @@ export const AIRPORTS = [
   { code: "LAX", city: "Los Angeles", country: "United States" },
   { code: "SFO", city: "San Francisco", country: "United States" },
   { code: "LHR", city: "London", country: "United Kingdom" },
-  { code: "CDG", city: "Paris", country: "France" },
-  { code: "SYD", city: "Sydney", country: "Australia" },
-  { code: "DXB", city: "Dubai", country: "United Arab Emirates" },
-  { code: "DAD", city: "Da Nang", country: "Vietnam" },
-  { code: "SGN", city: "Ho Chi Minh City", country: "Vietnam" },
 ]
 
 export const airportByCode = (code) =>
