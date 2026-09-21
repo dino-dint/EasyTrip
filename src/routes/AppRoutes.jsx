@@ -10,7 +10,11 @@ import SearchResults from "../pages/Find/SearchResults";
 import Contact from "../pages/Contact/Contact";
 import Wishlist from "../pages/Wishlist/Wishlist";
 import MyTrip from "../pages/MyTrips/MyTrips";
-import Profile from "../pages/Profile/Profile";
+import Profile from "../pages/Profile/Profile";import Hotels from '../pages/Hotels/Hotels'
+import HotelDetails from '../pages/Hotels/HotelDetails'
+import Flights from '../pages/Flights/Flight'
+import FlightDetails from '../pages/Flights/FlightDetails'
+
 
 function AppRoutes() {
   return (
@@ -21,9 +25,11 @@ function AppRoutes() {
         <Route path="/search" element={<SearchResults />} />
         <Route
           path="/accommodation"
-          element={<ComingSoon title="Hotels & Resorts" />}
+          element={<Hotels/>}/>
+        <Route path='/accommodation/:id' element={<HotelDetails />}
         />
-        <Route path="/flight" element={<ComingSoon title="Flights" />} />
+        <Route path="/flight" element={<Flights/>}/>
+        <Route path='/flight/:id' element={<FlightDetails />} />
         <Route path="/wishlist" element={<Wishlist/>}/>
         <Route path="/my-trip" element={<MyTrip/>}/>
         <Route path="/profile" element={<Profile/>}/>
