@@ -73,7 +73,7 @@ function FlightDetails() {
         </Link>
       </div>
     );
-    
+
   }
 
   return <FlightDetailsInner key={flight.id} flight={flight} />;
@@ -624,6 +624,7 @@ function BookingPayment({ flight, cabin, adults, total, onClose }) {
         )}
       </div>
     </div>
+    
   );
 }
 

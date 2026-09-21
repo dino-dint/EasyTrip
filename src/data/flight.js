@@ -16,6 +16,7 @@ export const fmtDay = (d) =>
     month: "short",
     day: "numeric",
   })
+  
 
 export const fmtFullDay = (d) =>
   d.toLocaleDateString("en-US", {
@@ -24,7 +25,7 @@ export const fmtFullDay = (d) =>
     day: "numeric",
     year: "numeric",
   })
-  
+
 
 export const today = new Date()
 

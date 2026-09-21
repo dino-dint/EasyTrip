@@ -1009,6 +1009,7 @@ function MonthPanel({ month, start, end, minDay, onPick }) {
             !sameDay(d, end);
           const isToday = sameDay(d, new Date());
 
+          
           return (
             <button
               key={d.toISOString()}
