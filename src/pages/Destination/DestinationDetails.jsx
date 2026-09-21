@@ -23,7 +23,7 @@ export default function DestinationDetails() {
           className="h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#020617] via-black/40 to-black/20" />
 
         <button
           onClick={() => navigate(-1)}
@@ -65,7 +65,7 @@ export default function DestinationDetails() {
           </ul>
         </div>
 
-        <div className="rounded-[32px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+        <div className="rounded-4xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
           <p className="text-slate-400">Starting Price</p>
           <h2 className="mt-2 text-5xl font-bold text-cyan-400">
             ${destination.price}

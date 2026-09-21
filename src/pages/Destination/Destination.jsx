@@ -67,14 +67,14 @@ export default function Destination() {
             {featured.map((item) => (
               <div
                 key={item.id}
-                className="relative overflow-hidden rounded-[32px] group"
+                className="relative overflow-hidden rounded-4xl group"
               >
                 <img
                   src={item.image}
-                  className="h-[380px] w-full object-cover transition duration-700 group-hover:scale-110"
+                  className="h-95 w-full object-cover transition duration-700 group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent" />
 
                 <div className="absolute bottom-0 p-8">
                   <span className="rounded-full bg-cyan-500 px-3 py-1 text-sm">

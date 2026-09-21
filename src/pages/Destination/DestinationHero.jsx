@@ -18,7 +18,7 @@ export default function DestinationHero({ search, setSearch }) {
         <div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/40 to-[#020617]" />
 
         {/* Blue Glow */}
-        <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+        <div className="absolute left-1/2 top-1/2 h-100 w-100 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
       </div>
 
       {/* Content */}
