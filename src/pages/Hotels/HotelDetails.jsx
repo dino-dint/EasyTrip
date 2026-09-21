@@ -594,7 +594,7 @@ function PaymentModal({ hotel, room, nights, subtotal, onClose }) {
 
               <button
                 type="submit"
-                className="mt-6 w-full rounded-full bg-sky-500 py-4 text-base font-bold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-400"
+                className="mt-6 w-full rounded-full bg-sky-500 py-4 text-base font-bold text-white shadow-lg  transition hover:bg-sky-400"
               >
                 Confirm & pay ${subtotal}
               </button>

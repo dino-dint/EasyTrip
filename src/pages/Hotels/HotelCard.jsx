@@ -6,7 +6,7 @@ function HotelCard({ hotel }) {
   return (
     <Link
       to={`/accommodation/${hotel.id}`}
-      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_20px_50px_rgba(56,189,248,0.25)]"
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1  hover:shadow-[0_20px_50px_rgba(56,189,248,0.25)]"
     >
       <div className="relative h-52 shrink-0 overflow-hidden">
         <img
@@ -66,7 +66,7 @@ function HotelCard({ hotel }) {
             </div>
           </div>
 
-          <span className="rounded-full border border-sky-500/30 bg-sky-50 px-4 py-2 text-xs font-semibold text-sky-600 transition-all duration-300 group-hover:bg-sky-500 group-hover:text-white">
+          <span className="rounded-full border   bg-sky-50 px-4 py-2 text-xs font-semibold text-sky-600 transition-all duration-300 group-hover:bg-sky-500 group-hover:text-white">
             View Stay
           </span>
         </div>

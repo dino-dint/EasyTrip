@@ -40,11 +40,13 @@ function HotelSearch({ onSearch }) {
               "Phnom Penh, Cambodia",
               "Siem Reap, Cambodia",
               "Sihanoukville, Cambodia",
+              "Koh Kong, Cambodia",
               "Tokyo, Japan",
+              "Hakone, Japan",
+              "Kyoto, Japan",
               "Seoul, South Korea",
-              "Singapore",
-              "Bangkok, Thailand",
-              "London, UK",
+              "Shanghai, China",
+              "San Francisco, USA",
             ].map((p) => (
               <option key={p}>{p}</option>
             ))}
@@ -66,7 +68,7 @@ function HotelSearch({ onSearch }) {
 
         <button
           type="submit"
-          className="rounded-full bg-sky-500 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition-all duration-300 hover:bg-sky-400 hover:shadow-sky-400/40"
+          className="rounded-full bg-sky-500 px-7 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-sky-400 "
         >
           Search
         </button>
