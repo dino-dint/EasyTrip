@@ -10,11 +10,12 @@ const navItems = [
   { name: "Contact", path: "/contact" },
 ];
 
+
 const destinationDropdown = [
   { name: "Cambodia", path: "/destination/cambodia" },
   { name: "Japan", path: "/destination/japan" },
   { name: "South Korea", path: "/destination/korea" },
-  { name: "USA", path: "/destination/america" },
+  { name: "USA", path: "/destination/usa" },
   { name: "China", path: "/destination/china" },
 ];
 
